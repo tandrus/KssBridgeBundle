@@ -1,0 +1,23 @@
+{% extends 'ScanKssBundle::layout.html.twig' %}
+
+{% block content %}
+    {% include 'ScanKssBundle:StyleGuide:block.html.twig' with
+        {
+            'section' : kss.getSection('1.1'),
+            'html' : '<button class="$modifier_class">Example Button</button>'
+        }
+    %}
+
+    <p>This block above was created with a simple template call:</p>
+    <pre><code>{% raw %}{% include 'ScanKssBundle:StyleGuide:block.html.twig' with
+    {
+        'section' : kss.getSection('1.1'),
+        'html' : '&lt;button class="$modifier_class"&gt;Example Button&lt;/button&gt;'
+    }
+%}{% endraw %}</code></pre>
+    <p>
+      Take a look at the source code to this Symfony2 Bundle for more details. The goal
+      is to remove the pain from creating a styleguide — document your CSS, have
+      example HTML in your templates and automate as much as possible.
+    </p>
+{% endblock %}
