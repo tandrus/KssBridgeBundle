@@ -16,17 +16,14 @@
                 </ul>
             {% endif %}
         </div>
-        {% if showNoModifier is not defined or showNoModifier %}
-            <div class="styleguide-element">
+        <div class="styleguide-element styleguide-modifier">
+            {% if showNoModifier is not defined or showNoModifier %}
                 {{  html|replace({'$modifierClass': ''})|raw  }}
-            </div>
-        {% endif %}
-        {% for modifier in section.modifiers %}
-            <div class="styleguide-element styleguide-modifier">
-                <span class="styleguide-modifier-name">{{  modifier.name  }}</span>
+            {% endif %}
+            {% for modifier in section.modifiers %}
                 {{  html|replace({'$modifierClass': modifier.classname})|raw  }}
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
 
         {% if showHTML is not defined or showHTML %}
             <div class="styleguide-html">
