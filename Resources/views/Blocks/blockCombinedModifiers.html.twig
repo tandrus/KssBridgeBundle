@@ -1,0 +1,12 @@
+{% extends 'ScanKssBundle:Blocks:block.html.twig' %}
+
+{% block styleguide_elements %}
+    <div class="styleguide-element styleguide-modifier">
+        {% if showNoModifier is not defined or showNoModifier %}
+            {{  html|replace({'$modifierClass': ''})|raw  }}
+        {% endif %}
+        {% for modifier in section.modifiers %}
+            {{  html|replace({'$modifierClass': modifier.classname})|raw  }}
+        {% endfor %}
+    </div>
+{% endblock %}

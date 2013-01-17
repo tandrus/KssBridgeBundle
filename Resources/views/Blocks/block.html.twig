@@ -1,0 +1,54 @@
+<div class="styleguide-example">
+    {% block styleguide_header %}
+        <h3>
+            <span class="styleguide-section">{{ section.section }}</span>
+            <span class="styleguide-filename">{{ section.filename }}</span>
+        </h3>
+    {% endblock %}
+
+    <div class="styleguide-description">
+        {% block styleguide_description %}
+            <p>{{  section.description|nl2br  }}</p>
+            {% if section.modifiers|length > 0 %}
+                <ul class="styleguide-modifier">
+                    {% for modifier in section.modifiers %}
+                        <li>
+                            <strong>{{  modifier.name  }}</strong>
+                            {% if modifier.description != '' %}
+                                - {{  modifier.description  }}
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endblock %}
+    </div>
+
+    <div class="styleguide-elements">
+        {% block styleguide_elements %}
+            {% if showNoModifier is not defined or showNoModifier %}
+                <div class="styleguide-element">
+                    {% block styleguide_element %}
+                        {{  html|replace({'$modifierClass': ''})|raw  }}
+                    {% endblock styleguide_element %}
+                </div>
+            {% endif %}
+            {% for modifier in section.modifiers %}
+                <div class="styleguide-element styleguide-modifier">
+                    {% block styleguide_modifier %}
+                        <span class="styleguide-modifier-name">{{  modifier.name  }}</span>
+                        {{  html|replace({'$modifierClass': modifier.classname})|raw  }}
+                    {% endblock %}
+                </div>
+            {% endfor %}
+        {% endblock %}
+    </div>
+
+    {% if showHTML is not defined or showHTML %}
+        <div class="styleguide-html">
+            {% block styleguide_html %}
+                <pre class="styleguide-code"><code>{{  html  }}</code></pre>
+            {% endblock %}
+        </div>
+    {% endif %}
+</div>
