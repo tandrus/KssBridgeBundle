@@ -3,14 +3,10 @@
 {% block styleguide_elements %}
     <div class="styleguide-element styleguide-modifier">
         {% if showNoModifier is not defined or showNoModifier %}
-            {{  html|replace({'$modifierClass': ''})|replace({'$extenderClass': section.baseExtensionClass})|raw  }}
+            {{  html|replace({'$modifierClass': ''})|raw  }}
         {% endif %}
         {% for modifier in section.modifiers %}
-            {% if modifier.extender %}
-                {{ html|replace({'$modifierClass': ''})|replace({'$extenderClass': modifier.classname})|raw }}
-            {% else %}
-                {{  html|replace({'$modifierClass': modifier.classname})|replace({'$extenderClass': section.baseExtensionClass})|raw  }}
-            {% endif %}
+            {{ modifier.exampleHtml(html)|raw }}
         {% endfor %}
     </div>
 {% endblock %}

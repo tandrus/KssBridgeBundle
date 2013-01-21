@@ -18,8 +18,8 @@
                                 {{  modifier.name  }}
                             </span>
                                 {% if modifier.extender %}
-                                    @extends
-                                    <span class="styleguide-modifier-name">%{{ section.baseExtensionClass }}</span>
+                                    @extend
+                                    <span class="styleguide-modifier-name">{{ modifier.extendedClass }}</span>
                                 {% endif %}
                             {% if modifier.description != '' %}
                                 - {{  modifier.description  }}
@@ -36,7 +36,7 @@
             {% if showNoModifier is not defined or showNoModifier %}
                 <div class="styleguide-element">
                     {% block styleguide_element %}
-                        {{  html|replace({'$modifierClass': ''})|replace({'$extenderClass': section.baseExtensionClass})|raw  }}
+                        {{  html|replace({'$modifierClass': ''})|raw  }}
                     {% endblock styleguide_element %}
                 </div>
             {% endif %}
@@ -44,11 +44,7 @@
                 <div class="styleguide-element styleguide-modifier {% if modifier.extender%}styleguide-extender{% endif %}">
                     {% block styleguide_modifier %}
                         <span class="styleguide-modifier-label {% if modifier.extender%}styleguide-extender-label{% endif %}">{{  modifier.name  }}</span>
-                        {% if modifier.extender %}
-                            {{ html|replace({'$modifierClass': ''})|replace({'$extenderClass': modifier.classname})|raw }}
-                        {% else %}
-                            {{  html|replace({'$modifierClass': modifier.classname})|replace({'$extenderClass': section.baseExtensionClass})|raw  }}
-                        {% endif %}
+                        {{ modifier.exampleHtml(html)|raw }}
                     {% endblock %}
                 </div>
             {% endfor %}
@@ -58,7 +54,7 @@
     {% if showHTML is not defined or showHTML %}
         <div class="styleguide-html">
             {% block styleguide_html %}
-                <pre class="styleguide-code"><code>{{ html|replace({'$extenderClass': section.baseExtensionClass}) }}</code></pre>
+                <pre class="styleguide-code"><code>{{ html }}</code></pre>
             {% endblock %}
         </div>
     {% endif %}
