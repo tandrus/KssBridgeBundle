@@ -4,7 +4,7 @@
     {% include 'ScanKssBundle:Blocks:block.html.twig' with
         {
             'section' : kss.getSection('1.1'),
-            'html' : '<button class="$modifier_class">Example Button</button>'
+            'html' : '<button class="$modifierClass">Example Button</button>'
         }
     %}
 
@@ -12,7 +12,7 @@
     <pre><code>{% raw %}{% include 'ScanKssBundle:Blocks:block.html.twig' with
     {
         'section' : kss.getSection('1.1'),
-        'html' : '&lt;button class="$modifier_class"&gt;Example Button&lt;/button&gt;'
+        'html' : '&lt;button class="$modifierClass"&gt;Example Button&lt;/button&gt;'
     }
 %}{% endraw %}</code></pre>
     <p>
