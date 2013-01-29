@@ -1,3 +1,7 @@
+{% if html is not defined %}
+    {% set html = section.markup %}
+{% endif %}
+
 <div class="styleguide-example">
     {% block styleguide_header %}
         <h3>

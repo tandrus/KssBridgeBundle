@@ -1,5 +1,5 @@
 {
-    "hash": "72190a257ce394db80e2fad0ec82722a",
+    "hash": "75a70a84518a01225cd2894896779262",
     "packages": [
         {
             "name": "doctrine/common",
@@ -72,16 +72,16 @@
         },
         {
             "name": "scan/kss-php",
-            "version": "v0.1.0",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/scaninc/kss-php",
-                "reference": "v0.1.0"
+                "reference": "v0.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/scaninc/kss-php/archive/v0.1.0.zip",
-                "reference": "v0.1.0",
+                "url": "https://github.com/scaninc/kss-php/archive/v0.2.0.zip",
+                "reference": "v0.2.0",
                 "shasum": ""
             },
             "require": {
@@ -91,7 +91,7 @@
             "require-dev": {
                 "phpunit/phpunit": "3.7.*"
             },
-            "time": "2013-01-28 23:03:33",
+            "time": "2013-01-29 20:46:18",
             "type": "library",
             "autoload": {
                 "psr-0": {

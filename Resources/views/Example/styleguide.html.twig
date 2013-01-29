@@ -3,16 +3,14 @@
 {% block content %}
     {% include 'ScanKssBundle:Blocks:block.html.twig' with
         {
-            'section' : kss.getSection('1.1'),
-            'html' : '<button class="$modifierClass">Example Button</button>'
+            'section' : kss.getSection('1.1')
         }
     %}
 
     <p>This block above was created with a simple template call:</p>
     <pre><code>{% raw %}{% include 'ScanKssBundle:Blocks:block.html.twig' with
     {
-        'section' : kss.getSection('1.1'),
-        'html' : '&lt;button class="$modifierClass"&gt;Example Button&lt;/button&gt;'
+        'section' : kss.getSection('1.1')
     }
 %}{% endraw %}</code></pre>
     <p>

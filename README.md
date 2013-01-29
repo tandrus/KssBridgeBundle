@@ -78,8 +78,7 @@ twig include:
 ```html
 {% include 'ScanKssBundle:Blocks:block.html.twig' with
     {
-        'section' : kss.getSection('1.1'),
-        'html' : '<button class="$modifierClass">Example Button</button>'
+        'section' : kss.getSection('1.1')
     }
 %}
 ```
