@@ -54,7 +54,7 @@ namespace Scan\Bundle\KssBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Scan\Bundle\KssBundle\Model\Parser;
+use Scan\Kss\Parser;
 
 class ExampleController extends Controller
 {
