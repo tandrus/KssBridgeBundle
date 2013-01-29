@@ -18,7 +18,7 @@
         }
     ],
     "autoload": {
-        "psr-0": { "Scan\\Bundle\\Kssbundle": "" }
+        "psr-0": { "Scan\\Bundle\\KssBundle": "" }
     },
-    "target-dir": "Scan/Bundle/Kssbundle"
+    "target-dir": "Scan/Bundle/KssBundle"
 }

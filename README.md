@@ -9,7 +9,7 @@ styleguides. You can find more information about KSS here at http://warpspire.co
 The easiest way to install this bundle is through composer. In your Symfony2 project
 folder, type the following command:
 
-    $ composer require scan/ScanKssBundle
+    $ composer require scan/kss-bundle
 
 This will install the bundle and all dependencies needed for the bundle to work.
 
