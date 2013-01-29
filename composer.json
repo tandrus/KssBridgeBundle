@@ -1,0 +1,24 @@
+{
+    "name": "scan/kss-bundle",
+    "description": "A Symfony2 implementation of KSS: a methodology for documenting CSS and generating styleguides",
+    "keywords": [
+        "kss",
+        "styleguide",
+        "css documentation"
+    ],
+    "license": "MIT",
+    "require": {
+        "scan/kss-php": "0.1.*"
+    },
+    "authors": [
+        {
+            "name": "Russell Ahlstrom",
+            "email": "russell.ahlstrom@gmail.com",
+            "homepage": "http://russell.ahlstromology.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Scan\\Bundle\\Kssbundle": "" }
+    },
+    "target-dir": "Scan/Bundle/Kssbundle"
+}
