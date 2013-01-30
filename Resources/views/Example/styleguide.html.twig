@@ -1,18 +1,22 @@
 {% extends 'ScanKssBundle::layout.html.twig' %}
 
 {% block content %}
-    {% include 'ScanKssBundle:Blocks:block.html.twig' with
-        {
-            'section' : kss.getSection('1.1')
-        }
-    %}
+    {% for section in kss.getSectionChildren('1') %}
+        {% include 'ScanKssBundle:Blocks:block.html.twig' with
+            {
+                'section' : section
+            }
+        %}
+    {% endfor %}
 
     <p>This block above was created with a simple template call:</p>
-    <pre><code>{% raw %}{% include 'ScanKssBundle:Blocks:block.html.twig' with
-    {
-        'section' : kss.getSection('1.1')
-    }
-%}{% endraw %}</code></pre>
+    <pre><code>{% raw %}{% for section in kss.getSectionChildren('1') %}
+    {% include 'ScanKssBundle:Blocks:block.html.twig' with
+        {
+            'section' : section
+        }
+    %}
+{% endfor %}{% endraw %}</code></pre>
     <p>
       Take a look at the source code to this Symfony2 Bundle for more details. The goal
       is to remove the pain from creating a styleguide — document your CSS, have
