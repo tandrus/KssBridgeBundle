@@ -1,9 +1,7 @@
 {% extends 'ScanKssBundle::layout.html.twig' %}
 
 {% block content %}
-    <h1 class="section-heading">
-        {{ section.reference ~ '. ' ~ section.title }}
-    </h1>
+    <h1>{{ section.title }}</h1>
 
     {% for childSection in sections %}
         {% include 'ScanKssBundle:Blocks:block.html.twig' with
