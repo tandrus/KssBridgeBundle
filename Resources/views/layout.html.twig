@@ -15,12 +15,7 @@
 
   <div id="wrapper">
 
-    <nav role="main">
-      <ul>
-        <li><a href="{{ path('scan_kss_example_index') }}">Home</a></li>
-        <li><a href="{{ path('scan_kss_example_styleguide') }}">Styleguide</a></li>
-      </ul>
-    </nav>
+    {% render url('scan_styleguide_default_menu') %}
 
     {% block content %}{% endblock %}
 

@@ -1,0 +1,28 @@
+/*
+# Headings
+
+Headers to help structure the page
+
+Styleguide 2
+*/
+
+/*
+# Section Heading
+
+Heading to be used to separate different sections of page from each other
+
+Markup:
+<h1 class="section-heading">Section Heading</h1>
+
+Styleguide 2.1
+*/
+
+.section-heading {
+    color: #434851;
+    background-color: #d4dce5;
+    font-weight: normal;
+    padding: 18px;
+    margin: 0 0 16px 0;
+    border: 1px solid #a9b9c6;
+    border-radius: 6px;
+}

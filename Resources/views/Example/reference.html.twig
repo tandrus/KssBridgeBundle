@@ -1,22 +1,27 @@
 {% extends 'ScanKssBundle::layout.html.twig' %}
 
 {% block content %}
-    {% for section in kss.getSectionChildren('1') %}
+    <h1 class="section-heading">
+        {{ section.reference ~ '. ' ~ section.title }}
+    </h1>
+
+    {% for childSection in sections %}
         {% include 'ScanKssBundle:Blocks:block.html.twig' with
             {
-                'section' : section
+                'section' : childSection
             }
         %}
     {% endfor %}
 
-    <p>This block above was created with a simple template call:</p>
-    <pre><code>{% raw %}{% for section in kss.getSectionChildren('1') %}
+    <p>The blocks above were created with a simple template call:</p>
+    <pre><code>{% raw %}{% for childSection in sections %}
     {% include 'ScanKssBundle:Blocks:block.html.twig' with
         {
             'section' : section
         }
     %}
 {% endfor %}{% endraw %}</code></pre>
+
     <p>
       Take a look at the source code to this Symfony2 Bundle for more details. The goal
       is to remove the pain from creating a styleguide — document your CSS, have

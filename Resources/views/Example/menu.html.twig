@@ -1,0 +1,9 @@
+<nav role="main">
+    <ul>
+        {% for link in links %}
+            <li>
+                <a href="{{ link.url }}" title="{{ link.title }}">{{ link.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
