@@ -79,6 +79,6 @@ class ExampleController extends Controller
      */
     protected function getKssParser()
     {
-        return new Parser('../Resources/public/css');
+        return new Parser(__DIR__ . '/../Resources/public/css');
     }
 }
