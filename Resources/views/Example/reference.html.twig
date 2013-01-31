@@ -17,7 +17,7 @@
     <pre><code>{% raw %}{% for childSection in sections %}
     {% include 'ScanKssBundle:Blocks:block.html.twig' with
         {
-            'section' : section
+            'section' : childSection
         }
     %}
 {% endfor %}{% endraw %}</code></pre>

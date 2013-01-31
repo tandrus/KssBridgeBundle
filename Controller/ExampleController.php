@@ -54,7 +54,7 @@ class ExampleController extends Controller
         $sections = $parser->getTopLevelSections();
         foreach ($sections as $section) {
             $link = array(
-                'name' => $section->getReference() . '. ' . $section->getTitle(),
+                'name' => $section->getTitle(),
                 'title' => $section->getDescription(),
                 'url' => $this->generateUrl(
                     'scan_kss_example_reference',
