@@ -2,28 +2,28 @@
     {% set html = section.markup %}
 {% endif %}
 
-<div class="styleguide-example">
+<div class="styleguide" id="r{{ section.reference }}">
     {% block styleguide_header %}
-        <h3>
-            <span class="styleguide-section">{{ section.section }}</span>
-            <span class="styleguide-title">{{ section.title }}</span>
-            <span class="styleguide-filename">{{ section.filename }}</span>
+        <h3 class="styleguide__header">
+            <span class="styleguide__reference">{{ section.reference }}</span>
+            <span class="styleguide__title">{{ section.title }}</span>
+            <span class="styleguide__filename">{{ section.filename }}</span>
         </h3>
     {% endblock %}
 
-    <div class="styleguide-description">
+    <div class="styleguide__description">
         {% block styleguide_description %}
             <p>{{  section.description|nl2br  }}</p>
             {% if section.modifiers|length > 0 %}
-                <ul class="styleguide-modifier">
+                <ul class="styleguide__modifiers">
                     {% for modifier in section.modifiers %}
                         <li>
-                            <span class="styleguide-modifier-name {% if modifier.extender %}styleguide-extender-name{% endif %}">
+                            <span class="styleguide__modifier-name {% if modifier.extender %}styleguide__modifier-name--extender{% endif %}">
                                 {{  modifier.name  }}
                             </span>
                                 {% if modifier.extender %}
                                     @extend
-                                    <span class="styleguide-modifier-name">{{ modifier.extendedClass }}</span>
+                                    <span class="styleguide__modifier-name">{{ modifier.extendedClass }}</span>
                                 {% endif %}
                             {% if modifier.description != '' %}
                                 - {{  modifier.description  }}
@@ -35,19 +35,19 @@
         {% endblock %}
     </div>
 
-    <div class="styleguide-elements">
+    <div class="styleguide__elements">
         {% block styleguide_elements %}
             {% if showNoModifier is not defined or showNoModifier %}
-                <div class="styleguide-element">
+                <div class="styleguide__element">
                     {% block styleguide_element %}
                         {{  html|replace({'$modifierClass': ''})|raw  }}
                     {% endblock styleguide_element %}
                 </div>
             {% endif %}
             {% for modifier in section.modifiers %}
-                <div class="styleguide-element styleguide-modifier {% if modifier.extender%}styleguide-extender{% endif %}">
+                <div class="styleguide__element styleguide__element--modifier {% if modifier.extender%}styleguide__element--extender{% endif %}">
                     {% block styleguide_modifier %}
-                        <span class="styleguide-modifier-label {% if modifier.extender%}styleguide-extender-label{% endif %}">{{  modifier.name  }}</span>
+                        <span class="styleguide__element__modifier-label {% if modifier.extender%}styleguide__element__modifier-label--extender{% endif %}">{{  modifier.name  }}</span>
                         {{ modifier.exampleHtml(html)|raw }}
                     {% endblock %}
                 </div>
@@ -56,9 +56,9 @@
     </div>
 
     {% if showHTML is not defined or showHTML %}
-        <div class="styleguide-html">
+        <div class="styleguide__html">
             {% block styleguide_html %}
-                <pre class="styleguide-code"><code>{{ html }}</code></pre>
+                <pre class="styleguide__code"><code>{{ html }}</code></pre>
             {% endblock %}
         </div>
     {% endif %}

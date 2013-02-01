@@ -1,7 +1,7 @@
 {% extends 'ScanKssBundle:Blocks:block.html.twig' %}
 
 {% block styleguide_elements %}
-    <div class="styleguide-element styleguide-modifier">
+    <div class="styleguide__element styleguide__element--modifier">
         {% if showNoModifier is not defined or showNoModifier %}
             {{  html|replace({'$modifierClass': ''})|raw  }}
         {% endif %}
