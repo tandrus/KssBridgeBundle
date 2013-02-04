@@ -1,5 +1,5 @@
 {% if html is not defined %}
-    {% set html = section.markupNormal('{class}') %}
+    {% set html = section.markup %}
 {% endif %}
 
 <div class="styleguide" id="r{{ section.reference }}">
@@ -40,7 +40,7 @@
             {% if showNoModifier is not defined or showNoModifier %}
                 <div class="styleguide__element">
                     {% block styleguide_element %}
-                        {{  html|replace({'{class}': ''})|raw  }}
+                        {{  html|replace({'$modifierClass': ''})|raw  }}
                     {% endblock styleguide_element %}
                 </div>
             {% endif %}
@@ -58,7 +58,7 @@
     {% if showHTML is not defined or showHTML %}
         <div class="styleguide__html">
             {% block styleguide_html %}
-                <pre class="styleguide__code"><code>{{ html }}</code></pre>
+                <pre class="styleguide__code"><code>{{ html|replace({'$modifierClass': '{class}'}) }}</code></pre>
             {% endblock %}
         </div>
     {% endif %}
