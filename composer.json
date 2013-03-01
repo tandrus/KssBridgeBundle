@@ -8,9 +8,8 @@
     ],
     "license": "MIT",
     "require": {
-        "scan/kss-php": "0.4.*",
-        "symfony/framework-bundle": ">=2.0,<2.2-dev",
-        "symfony/twig-bundle": ">=2.0,<2.2-dev"
+        "scan/kss-php": "0.5.*",
+        "symfony/symfony": "2.2.*"
     },
     "authors": [
         {
