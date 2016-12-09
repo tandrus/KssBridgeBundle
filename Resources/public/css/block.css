@@ -63,7 +63,7 @@
     border-top: none;
 }
 .styleguide__element__modifier-label--extender:after {
-    content: url('/bundles/scankss/images/extender.png');
+    content: url('/bundles/kssbridge/images/extender.png');
     vertical-align: middle;
     padding-left: 6px;
 }

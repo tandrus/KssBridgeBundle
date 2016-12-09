@@ -1,7 +1,7 @@
 parameters:
-#    scan_kss.example.class: Scan\Bundle\KssBundle\Example
+#    kss_bridge.example.class: Kss\Bundle\BridgeBundle\Example
 
 services:
-#    scan_kss.example:
-#        class: %scan_kss.example.class%
+#    kss_bridge.example:
+#        class: %kss_bridge.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]

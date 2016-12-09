@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Styleguide Example</title>
-  {% stylesheets 'bundles/scankss/css/*' %}
+  {% stylesheets 'bundles/kssbridge/css/*' %}
     <link rel="stylesheet" href="{{ asset_url }}" />
   {% endstylesheets %}
 </head>
@@ -15,13 +15,13 @@
 
   <div id="wrapper">
 
-    {% render url('scan_kss_example_menu') %}
+    {% render url('kss_bridge_example_menu') %}
 
     {% block content %}{% endblock %}
 
   </div>
 
-  {% javascripts '@ScanKssBundle/Resources/public/js/*' %}
+  {% javascripts '@KssBridgeBundle/Resources/public/js/*' %}
     <script src="{{ asset_url }}"></script>
   {% endjavascripts %}
 

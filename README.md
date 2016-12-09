@@ -1,6 +1,6 @@
-# ScanKssBundle
+# KssBridgeBundle
 
-This bundle provides a simple integration of the [kss-php](https://github.com/scaninc/kss-php)
+This bundle provides a simple integration of the [kss-php](https://github.com/kss-php/kss-php)
 library into Symfony2. KSS is a methodology for documenting CSS and generating
 styleguides. You can find more information about KSS here at http://warpspire.com/kss/.
 
@@ -9,7 +9,7 @@ styleguides. You can find more information about KSS here at http://warpspire.co
 The easiest way to install this bundle is through composer. In your Symfony2 project
 folder, type the following command:
 
-    $ composer require scan/kss-bundle
+    $ composer require kss/bridge-bundle
 
 This will install the bundle and all dependencies needed for the bundle to work.
 
@@ -24,7 +24,7 @@ public function registerBundles()
     $bundles = array(
         // ...
 
-        new Scan\Bundle\KssBundle\ScanKssBundle(),
+        new Kss\Bundle\KssBundle\KssBridgeBundle(),
     );
 }
 ```
@@ -34,8 +34,8 @@ to add the following to your symfony2 routes.
 
 ```yaml
 # app/config/routing_dev.yml
-scan_kss:
-    resource: @ScanKssBundle/Controller/
+kss_bridge:
+    resource: @KssBridgeBundle/Controller/
     type:     annotation
     prefix:   /_kssExample
 ```
@@ -43,18 +43,18 @@ scan_kss:
 ## Basic Usage
 
 To output the dynamically generated styleguides, you'll need to create a
-\Scan\Kss\Parser in your controller and pass it the directory containing your
+\Kss\Parser in your controller and pass it the directory containing your
 stylesheets.
 
 ```php
 <?php
 
-namespace Scan\Bundle\KssBundle\Controller;
+namespace Kss\Bundle\BridgeBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Scan\Kss\Parser;
+use Kss\Parser;
 
 class ExampleController extends Controller
 {
@@ -64,7 +64,7 @@ class ExampleController extends Controller
      */
     public function styleguideAction()
     {
-        $kss = new Parser($this->getRequest()->server->get('DOCUMENT_ROOT') . '/bundles/scankss/css');
+        $kss = new Parser($this->getRequest()->server->get('DOCUMENT_ROOT') . '/bundles/kssbridge/css');
         return array(
             'kss' => $kss,
         );
@@ -76,7 +76,7 @@ Then in your views, when you want to output a styleguide section, use the follow
 twig include:
 
 ```html
-{% include 'ScanKssBundle:Blocks:block.html.twig' with
+{% include 'KssBridgeBundle:Blocks:block.html.twig' with
     {
         'section' : kss.getSection('1.1')
     }
@@ -88,7 +88,7 @@ pseudo-classes such as :hover, :disabled, etc. in the styleguide. This can be
 done with the following lines somewhere in your layout or view:
 
 ```html
-{% javascripts '@ScanKssBundle/Resources/public/js/*' %}
+{% javascripts '@KssBridgeBundle/Resources/public/js/*' %}
     <script src="{{ asset_url }}"></script>
 {% endjavascripts %}
 ```
@@ -98,13 +98,13 @@ the styles included. To use the styles included, add the following to your
 layout or view:
 
 ```html
-{% stylesheets 'bundles/scankss/css/*' %}
+{% stylesheets 'bundles/kssbridge/css/*' %}
     <link rel="stylesheet" href="{{ asset_url }}" />
 {% endstylesheets %}
 ```
 
 
 For a complete example, take a look at the included [example controllers]
-(https://github.com/scaninc/ScanKssBundle/blob/master/Controller),
-[views](https://github.com/scaninc/ScanKssBundle/blob/master/Resources/views), and
-[stylesheets](https://github.com/scaninc/ScanKssBundle/blob/master/Resources/public/css).
+(https://github.com/kss-php/KssBridgeBundle/blob/master/Controller),
+[views](https://github.com/kss-php/KssBridgeBundle/blob/master/Resources/views), and
+[stylesheets](https://github.com/kss-php/KssBridgeBundle/blob/master/Resources/public/css).

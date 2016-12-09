@@ -1,11 +1,11 @@
 <?php
 
-namespace Scan\Bundle\KssBundle\Controller;
+namespace Kss\Bundle\BridgeBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Scan\Kss\Parser;
+use Kss\Parser;
 
 class ExampleController extends Controller
 {
@@ -47,7 +47,7 @@ class ExampleController extends Controller
         $links[] = array(
             'name' => 'Home',
             'title' => '',
-            'url' => $this->generateUrl('scan_kss_example_index'),
+            'url' => $this->generateUrl('kss_bridge_example_index'),
         );
 
         $parser = $this->getKssParser();
@@ -57,7 +57,7 @@ class ExampleController extends Controller
                 'name' => $section->getTitle(),
                 'title' => $section->getDescription(),
                 'url' => $this->generateUrl(
-                    'scan_kss_example_reference',
+                    'kss_bridge_example_reference',
                     array(
                         'reference' => $section->getReference(),
                         'title' => strtolower(preg_replace('/\W+/', '-', $section->getTitle())),

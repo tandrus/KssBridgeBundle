@@ -1,10 +1,10 @@
-{% extends 'ScanKssBundle::layout.html.twig' %}
+{% extends 'KssBridgeBundle::layout.html.twig' %}
 
 {% block content %}
     <h1>{{ section.title }}</h1>
 
     {% for childSection in sections %}
-        {% include 'ScanKssBundle:Blocks:block.html.twig' with
+        {% include 'KssBridgeBundle:Blocks:block.html.twig' with
             {
                 'section' : childSection
             }
@@ -13,7 +13,7 @@
 
     <p>The blocks above were created with a simple template call:</p>
     <pre><code>{% raw %}{% for childSection in sections %}
-    {% include 'ScanKssBundle:Blocks:block.html.twig' with
+    {% include 'KssBridgeBundle:Blocks:block.html.twig' with
         {
             'section' : childSection
         }

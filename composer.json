@@ -1,5 +1,5 @@
 {
-    "name": "scan/kss-bundle",
+    "name": "kss-php/bridge-bundle",
     "description": "A Symfony2 implementation of KSS: a methodology for documenting CSS and generating styleguides",
     "keywords": [
         "kss",
@@ -8,7 +8,7 @@
     ],
     "license": "MIT",
     "require": {
-        "scan/kss-php": "~0.5",
+        "kss-php/kss-php": "~2.0",
         "symfony/symfony": "~2.1"
     },
     "authors": [
@@ -19,7 +19,10 @@
         }
     ],
     "autoload": {
-        "psr-0": { "Scan\\Bundle\\KssBundle": "" }
+        "psr-0": { "Kss\\Bundle\\BridgeBundle": "" }
     },
-    "target-dir": "Scan/Bundle/KssBundle"
+    "suggest": {
+    	"symfony/assetic-bundle": "Needed to run the KSS Demo Examples"
+    },
+    "target-dir": "Kss/Bundle/BridgeBundle"
 }
