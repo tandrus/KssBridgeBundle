@@ -9,7 +9,7 @@
     "license": "MIT",
     "require": {
         "kss-php/kss-php": "~2.0",
-        "symfony/symfony": "~2.1"
+        "symfony/symfony": "^3.2"
     },
     "authors": [
         {
