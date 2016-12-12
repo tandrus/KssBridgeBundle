@@ -23,12 +23,6 @@
     },
     "suggest": {
     	"symfony/assetic-bundle": "Needed to run the KSS Demo Examples"
-    },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/tandrus/kss-php"
-        }
-    ],
+    }
     "target-dir": "Kss/Bundle/BridgeBundle"
 }
